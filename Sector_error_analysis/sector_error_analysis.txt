@@ -1,0 +1,69 @@
+======================================================================
+SECTOR ERROR ANALYSIS - XGBoost Models
+======================================================================
+
+Test dataframes created:
+   Daily: 2071 samples
+   Weekly: 355 samples
+   Monthly: 69 samples
+1. Sector-wise MAE Analysis
+==================================================
+
+Daily - Top 3 sectors by MAE:
+Sector
+Other    6.863497
+Ida      4.365539
+Henry    4.293735
+Name: Abs_Error_XGB, dtype: float64
+
+
+Weekly - Top 3 sectors by MAE:
+Sector
+Other    144.807205
+Henry     39.297489
+Ida       39.252377
+Name: Abs_Error_XGB, dtype: float64
+
+
+Monthly - Top 3 sectors by MAE:
+Sector
+Other    824.392395
+Ida      184.972419
+Henry    169.627298
+Name: Abs_Error_XGB, dtype: float64
+
+2. Peak vs Normal Demand Analysis
+==================================================
+Daily - Normal: 4.279, Peak: 4.400
+Weekly - Normal: 40.453, Peak: 36.047
+Monthly - Normal: 218.403, Peak: 62.045
+
+3. Worst-5 Failure Cases (Daily)
+==================================================
+Sector       Date  Actual  Pred_XGB  Abs_Error_XGB  pct_priority_1  pct_mental_health
+   Ida 2024-01-10      92 62.599461      29.400539        0.163043           0.076087
+ Henry 2025-02-20      45 71.685684      26.685684        0.155556           0.066667
+   Ida 2025-01-17      94 69.094498      24.905502        0.127660           0.127660
+   Ida 2024-01-05      48 72.019157      24.019157        0.083333           0.083333
+ Henry 2025-03-14     100 77.058006      22.941994        0.110000           0.080000
+
+SECTOR ERROR ANALYSIS COMPLETE
+Generated files:
+   • daily_peak_vs_normal.csv
+   • daily_peak_vs_normal.png
+   • daily_predictions_with_error.csv
+   • daily_sector_mae.csv
+   • daily_sector_mae.png
+   • daily_worst_5_cases.csv
+   • monthly_peak_vs_normal.csv
+   • monthly_peak_vs_normal.png
+   • monthly_predictions_with_error.csv
+   • monthly_sector_mae.csv
+   • monthly_sector_mae.png
+   • sector_error_analysis.txt
+   • weekly_peak_vs_normal.csv
+   • weekly_peak_vs_normal.png
+   • weekly_predictions_with_error.csv
+   • weekly_sector_mae.csv
+   • weekly_sector_mae.png
+   • worst_5_dumbbell_final.png

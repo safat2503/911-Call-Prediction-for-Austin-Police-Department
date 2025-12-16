@@ -1,0 +1,75 @@
+======================================================================
+GeoID ERROR ANALYSIS - RF Models
+======================================================================
+
+Test dataframes created:
+   Daily: 71568 samples
+   Weekly: 20017 samples
+   Monthly: 4409 samples
+1. GeoID-wise MAE Analysis
+==================================================
+
+Daily - Top 5 GeoIDs by MAE:
+Geo ID
+4.845398e+11    3.116278
+4.845304e+11    0.541581
+4.845305e+11    0.396464
+4.845304e+11    0.318532
+4.849102e+11    0.264210
+Name: Abs_Error_RF, dtype: float64
+
+
+Weekly - Top 5 GeoIDs by MAE:
+Geo ID
+4.845398e+11    24.342606
+4.845304e+11     5.096468
+4.845305e+11     4.507922
+4.845304e+11     3.391483
+4.845304e+11     3.305798
+Name: Abs_Error_RF, dtype: float64
+
+
+Monthly - Top 5 GeoIDs by MAE:
+Geo ID
+4.845398e+11    59.182730
+4.845304e+11    13.893542
+4.845305e+11    12.053464
+4.845304e+11    11.500145
+4.849102e+11     9.458793
+Name: Abs_Error_RF, dtype: float64
+
+2. Peak vs Normal Demand Analysis
+==================================================
+Daily - Normal: 0.154, Peak: 0.148
+Weekly - Normal: 0.693, Peak: 3.708
+Monthly - Normal: 2.729, Peak: 9.336
+
+3. Worst-5 Failure Cases (Daily)
+==================================================
+      Geo ID       Date  Actual   Pred_RF  Abs_Error_RF  pct_priority_1  pct_mental_health
+4.845398e+11 2023-03-09      31 15.828283     15.171717        0.000000           0.000000
+4.845398e+11 2024-11-22      26 11.835017     14.164983        0.192308           0.000000
+4.845398e+11 2023-07-31      27 13.471380     13.528620        0.074074           0.000000
+4.845398e+11 2024-04-10      28 14.575758     13.424242        0.035714           0.035714
+4.845398e+11 2024-07-29      28 15.309764     12.690236        0.035714           0.035714
+
+GeoID ERROR ANALYSIS COMPLETE
+Generated files:
+   • GeoID_error_analysis.txt
+   • daily_geoid_mae.csv
+   • daily_geoid_mae.png
+   • daily_peak_vs_normal.csv
+   • daily_peak_vs_normal.png
+   • daily_predictions_with_error.csv
+   • daily_worst_5_cases.csv
+   • monthly_geoid_mae.csv
+   • monthly_geoid_mae.png
+   • monthly_peak_vs_normal.csv
+   • monthly_peak_vs_normal.png
+   • monthly_predictions_with_error.csv
+   • weekly_geoid_mae.csv
+   • weekly_geoid_mae.png
+   • weekly_peak_vs_normal.csv
+   • weekly_peak_vs_normal.png
+   • weekly_predictions_with_error.csv
+   • worst_5_dumbbell_final.png

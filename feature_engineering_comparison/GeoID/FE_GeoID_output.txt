@@ -1,0 +1,140 @@
+Total records: 812,576
+Date range: 2023-01-01 00:01:00 to 2025-10-31 23:59:47
+
+Priority Levels: ['Priority 2' 'Priority 0' 'Priority 3' 'Priority 1']
+Mental Health values: ['Not Mental Health Incident' 'Mental Health Incident']
+Unique Categories: 40
+Unique Geo IDs: 676
+
+
+
+
+
+
+
+
+GeoID Daily shape: (357837, 19)
+
+Columns: ['Geo ID', 'Date', 'Response Day of Week', 'Month', 'Year', 'Day_of_Year', 'Week', 'Call_Count', 'MH_Count', 'Avg_Hour', 'Priority_1', 'Priority_2', 'Priority_3', 'Priority_4', 'pct_priority_1', 'pct_priority_2', 'pct_priority_3', 'pct_priority_4', 'pct_mental_health']
+
+Sample:
+         Geo ID        Date Response Day of Week  Month  Year  Day_of_Year  \
+0  4.820901e+11  2023-01-01                  Sun      1  2023            1   
+1  4.820901e+11  2023-01-07                  Sat      1  2023            7   
+2  4.820901e+11  2023-01-23                  Mon      1  2023           23   
+3  4.820901e+11  2023-01-28                  Sat      1  2023           28   
+4  4.820901e+11  2023-02-09                  Thu      2  2023           40   
+
+   Week  Call_Count  MH_Count  Avg_Hour  Priority_1  Priority_2  Priority_3  \
+0    52           1         0       7.0         0.0         0.0         1.0   
+1     1           1         0      16.0         0.0         1.0         0.0   
+2     4           1         0      15.0         0.0         0.0         1.0   
+3     4           1         0       8.0         0.0         0.0         1.0   
+4     6           1         0       0.0         0.0         0.0         1.0   
+
+   Priority_4  pct_priority_1  pct_priority_2  pct_priority_3  pct_priority_4  \
+0         0.0             0.0             0.0             1.0             0.0   
+1         0.0             0.0             1.0             0.0             0.0   
+2         0.0             0.0             0.0             1.0             0.0   
+3         0.0             0.0             0.0             1.0             0.0   
+4         0.0             0.0             0.0             1.0             0.0   
+...
+1                0.0  
+2                0.0  
+3                0.0  
+4                0.0  
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+Top 5 Incident Categories: ['Disturbance', 'Welfare Check', 'Trespassing', 'Suspicious Things', 'Alarms']
+
+Added category features. New shape: (357837, 29)
+
+New columns: ['category_1_count', 'pct_category_1', 'category_2_count', 'pct_category_2', 'category_3_count', 'pct_category_3', 'category_4_count', 'pct_category_4', 'category_5_count', 'pct_category_5']
+Lag features added (including new ones)
+
+Sample with lag features:
+         Geo ID        Date  Call_Count  lag_previous_day  \
+0  4.820901e+11  2023-01-01           1               0.0   
+1  4.820901e+11  2023-01-07           1               1.0   
+2  4.820901e+11  2023-01-23           1               1.0   
+3  4.820901e+11  2023-01-28           1               1.0   
+4  4.820901e+11  2023-02-09           1               1.0   
+5  4.820901e+11  2023-03-12           1               1.0   
+6  4.820901e+11  2023-03-14           1               1.0   
+7  4.820901e+11  2023-04-22           1               1.0   
+8  4.820901e+11  2023-04-26           1               1.0   
+9  4.820901e+11  2023-05-25           1               1.0   
+
+   lag_same_day_last_week  lag_2days_ago  lag_same_day_last_month  
+0                     0.0            0.0                      0.0  
+1                     0.0            0.0                      0.0  
+2                     0.0            1.0                      0.0  
+3                     0.0            1.0                      0.0  
+4                     0.0            1.0                      0.0  
+5                     0.0            1.0                      0.0  
+6                     0.0            1.0                      0.0  
+7                     1.0            1.0                      0.0  
+8                     1.0            1.0                      0.0  
+9                     1.0            1.0                      0.0  
+All temporal and new features added
+
+Weekend distribution: {0: 255287, 1: 102550}
+Holiday count: 2643
+Peak hour period count: 95320
+High priority days: 81971
+GeoID Weekly shape: (100083, 35)
+
+Columns: ['Geo ID', 'Year', 'Week', 'Month', 'Call_Count', 'MH_Count', 'Avg_Hour', 'Priority_1', 'Priority_2', 'Priority_3', 'Priority_4', 'pct_priority_1', 'pct_priority_2', 'pct_priority_3', 'pct_priority_4', 'pct_mental_health', 'category_1_count', 'pct_category_1', 'category_2_count', 'pct_category_2', 'category_3_count', 'pct_category_3', 'category_4_count', 'pct_category_4', 'category_5_count', 'pct_category_5', 'lag_previous_week', 'is_peak_hour_period', 'hours_from_peak', 'is_high_priority_week', 'days_since_start', 'year_trend', 'month_trend', 'week_trend', 'rolling_mean_4w']
+GeoID Monthly shape: (22042, 35)
+
+Columns: ['Geo ID', 'Year', 'Month', 'Call_Count', 'MH_Count', 'Avg_Hour', 'Priority_1', 'Priority_2', 'Priority_3', 'Priority_4', 'pct_priority_1', 'pct_priority_2', 'pct_priority_3', 'pct_priority_4', 'pct_mental_health', 'category_1_count', 'pct_category_1', 'category_2_count', 'pct_category_2', 'category_3_count', 'pct_category_3', 'category_4_count', 'pct_category_4', 'category_5_count', 'pct_category_5', 'lag_previous_month', 'lag_same_month_last_year', 'is_peak_hour_period', 'hours_from_peak', 'is_high_priority_month', 'is_peak_month', 'days_since_start', 'year_trend', 'month_trend', 'rolling_mean_3m']
+
+Sample:
+         Geo ID  Year  Month  Call_Count  MH_Count  Avg_Hour  Priority_1  \
+0  4.820901e+11  2023      1           4         0      11.5         0.0   
+1  4.820901e+11  2023      2           1         0       0.0         0.0   
+2  4.820901e+11  2023      3           2         0       4.5         0.0   
+3  4.820901e+11  2023      4           2         0      16.0         0.0   
+4  4.820901e+11  2023      5           1         0      11.0         0.0   
+
+   Priority_2  Priority_3  Priority_4  ...  lag_previous_month  \
+0         1.0         3.0         0.0  ...                 0.0   
+1         0.0         1.0         0.0  ...                 4.0   
+2         0.0         2.0         0.0  ...                 1.0   
+3         1.0         1.0         0.0  ...                 2.0   
+4         0.0         1.0         0.0  ...                 2.0   
+
+   lag_same_month_last_year  is_peak_hour_period  hours_from_peak  \
+0                       0.0                    0              5.5   
+1                       0.0                    0             17.0   
+2                       0.0                    0             12.5   
+3                       0.0                    1              1.0   
+4                       0.0                    0              6.0   
+...
+3            4         1.666667  
+4            5         1.666667  
+
+[5 rows x 35 columns]
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+
+
+
+Saved feature-engineered datasets:
+   - geoid_daily_enhanced.csv (357,837 rows, 51 columns)
+   - geoid_weekly_enhanced.csv (100,083 rows, 35 columns)
+   - geoid_monthly_enhanced.csv (22,042 rows, 35 columns)
+
+Feature Summary:
+   Daily features: 50 (excluding Call_Count)
+   Weekly features: 34 (excluding Call_Count)
+   Monthly features: 34 (excluding Call_Count)
+
+   Features include:
+   - Priority percentages (4 features)
+   - Mental Health percentage (1 feature)
+   - Top 5 category percentages (5 features)
+   - Lag features (5 for daily, 1+ for weekly, 2 for monthly)
+   - Temporal features (is_weekend, is_peak_day, is_holiday)
+   - Hour-based features (is_peak_hour_period, hour_category, hours_from_peak)
+   - Priority-hour interactions (pct_priority_1_peak_hour, is_high_priority_day)
+   - Trend features (days_since_start, year_trend, month_trend, week_trend)
+   - Rolling statistics (rolling_mean_7d, rolling_std_7d, rolling_mean_30d)

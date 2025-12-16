@@ -1,0 +1,157 @@
+=== Training Started: 2025-12-03 21:25:43.040564 ===
+
+Dataset shapes - Daily: (10351, 51), Weekly: (1771, 35), Monthly: (341, 35)
+Feature counts - Enhanced: Daily=37, Weekly=23, Monthly=23
+Encoding complete
+Train-test splits complete
+Daily - Train 8280, Test 2071
+Weekly - Train 1416, Test 355
+Monthly - Train 272, Test 69
+Feature scaling complete
+Lasso models trained
+Linear Regression models trained
+Training Random Forest models...
+RF Enhanced Daily - Best params: {'n_estimators': np.int64(215), 'max_features': 0.9, 'max_depth': np.int64(8)}
+RF Enhanced Daily - Best RMSE: 9.60
+RF Enhanced Weekly - Best params: {'n_estimators': np.int64(290), 'max_features': 0.5, 'max_depth': np.int64(5)}
+RF Enhanced Weekly - Best RMSE: 85.27
+RF Enhanced Monthly - Best params: {'n_estimators': np.int64(180), 'max_features': 0.5, 'max_depth': np.int64(6)}
+RF Enhanced Monthly - Best RMSE: 342.68
+Random Forest training complete
+Training XGBoost models...
+XGB Enhanced Daily - Best params: {'subsample': np.float64(0.7), 'n_estimators': np.int64(451), 'max_depth': np.int64(6), 'learning_rate': np.float64(0.13421052631578947), 'colsample_bytree': np.float64(0.8888888888888888)}
+XGB Enhanced Daily - Best RMSE: 6.66
+XGB Enhanced Weekly - Best params: {'subsample': np.float64(0.7333333333333333), 'n_estimators': np.int64(256), 'max_depth': np.int64(4), 'learning_rate': np.float64(0.07105263157894737), 'colsample_bytree': np.float64(0.5222222222222221)}
+XGB Enhanced Weekly - Best RMSE: 68.97
+XGB Enhanced Monthly - Best params: {'subsample': np.float64(1.0), 'n_estimators': np.int64(123), 'max_depth': np.int64(2), 'learning_rate': np.float64(0.1), 'colsample_bytree': np.float64(0.4666666666666666)}
+XGB Enhanced Monthly - Best RMSE: 210.98
+All models trained. Total: 12
+
+=== Model Evaluation Results ===
+                  Model       R2        MAE       RMSE Aggregation Algorithm
+   lasso_enhanced_daily 0.463636   6.039571   7.877014       Daily     LASSO
+  lasso_enhanced_weekly 0.804462  55.932445  67.030907      Weekly     LASSO
+ lasso_enhanced_monthly 0.922455  69.495427  86.822279     Monthly     LASSO
+  linear_enhanced_daily 0.465167   6.000205   7.865762       Daily    LINEAR
+ linear_enhanced_weekly 0.797005  57.479819  68.297195      Weekly    LINEAR
+linear_enhanced_monthly 0.902814  75.183076  97.198162     Monthly    LINEAR
+      rf_enhanced_daily 0.475903   6.146660   7.786417       Daily        RF
+     rf_enhanced_weekly 0.816873  51.353031  64.868909      Weekly        RF
+    rf_enhanced_monthly 0.715993 127.256417 166.157494     Monthly        RF
+     xgb_enhanced_daily 0.704087   4.330860   5.850783       Daily       XGB
+    xgb_enhanced_weekly 0.894107  39.572205  49.327964      Weekly       XGB
+   xgb_enhanced_monthly 0.480562 186.678024 224.709926     Monthly       XGB
+=== Training Started: 2025-12-03 21:40:33.147890 ===
+
+Dataset shapes - Daily: (10351, 51), Weekly: (1771, 35), Monthly: (341, 35)
+Feature counts - Enhanced: Daily=37, Weekly=23, Monthly=23
+Encoding complete
+Train-test splits complete
+Daily - Train 8280, Test 2071
+Weekly - Train 1416, Test 355
+Monthly - Train 272, Test 69
+Feature scaling complete
+Lasso models trained
+Linear Regression models trained
+Training Random Forest models...
+RF Enhanced Daily - Best params: {'n_estimators': np.int64(215), 'max_features': 0.9, 'max_depth': np.int64(8)}
+RF Enhanced Daily - Best RMSE: 9.60
+RF Enhanced Weekly - Best params: {'n_estimators': np.int64(290), 'max_features': 0.5, 'max_depth': np.int64(5)}
+RF Enhanced Weekly - Best RMSE: 85.27
+RF Enhanced Monthly - Best params: {'n_estimators': np.int64(180), 'max_features': 0.5, 'max_depth': np.int64(6)}
+RF Enhanced Monthly - Best RMSE: 342.68
+Random Forest training complete
+Training XGBoost models...
+XGB Enhanced Daily - Best params: {'subsample': np.float64(0.7), 'n_estimators': np.int64(451), 'max_depth': np.int64(6), 'learning_rate': np.float64(0.13421052631578947), 'colsample_bytree': np.float64(0.8888888888888888)}
+XGB Enhanced Daily - Best RMSE: 6.66
+XGB Enhanced Weekly - Best params: {'subsample': np.float64(0.7333333333333333), 'n_estimators': np.int64(256), 'max_depth': np.int64(4), 'learning_rate': np.float64(0.07105263157894737), 'colsample_bytree': np.float64(0.5222222222222221)}
+XGB Enhanced Weekly - Best RMSE: 68.97
+XGB Enhanced Monthly - Best params: {'subsample': np.float64(1.0), 'n_estimators': np.int64(123), 'max_depth': np.int64(2), 'learning_rate': np.float64(0.1), 'colsample_bytree': np.float64(0.4666666666666666)}
+XGB Enhanced Monthly - Best RMSE: 210.98
+All models trained. Total: 12
+
+=== Model Evaluation Results ===
+                  Model       R2        MAE       RMSE Aggregation Algorithm
+   lasso_enhanced_daily 0.463636   6.039571   7.877014       Daily     LASSO
+  lasso_enhanced_weekly 0.804462  55.932445  67.030907      Weekly     LASSO
+ lasso_enhanced_monthly 0.922455  69.495427  86.822279     Monthly     LASSO
+  linear_enhanced_daily 0.465167   6.000205   7.865762       Daily    LINEAR
+ linear_enhanced_weekly 0.797005  57.479819  68.297195      Weekly    LINEAR
+linear_enhanced_monthly 0.902814  75.183076  97.198162     Monthly    LINEAR
+      rf_enhanced_daily 0.475903   6.146660   7.786417       Daily        RF
+     rf_enhanced_weekly 0.816873  51.353031  64.868909      Weekly        RF
+    rf_enhanced_monthly 0.715993 127.256417 166.157494     Monthly        RF
+     xgb_enhanced_daily 0.704087   4.330860   5.850783       Daily       XGB
+    xgb_enhanced_weekly 0.894107  39.572205  49.327964      Weekly       XGB
+   xgb_enhanced_monthly 0.480562 186.678024 224.709926     Monthly       XGB
+Top 10 Features Correlated with Call_Count (Daily):
+Call_Count                 1.000000
+rolling_mean_7d            0.942893
+rolling_mean_30d           0.933603
+lag_previous_week_total    0.915746
+lag_previous_day           0.884391
+lag_2days_ago              0.868679
+lag_same_day_last_week     0.865347
+lag_same_day_last_month    0.799289
+pct_priority_1             0.595985
+rolling_std_7d             0.560903
+pct_priority_4            -0.489804
+Name: Call_Count, dtype: float64
+
+Top 10 Features Correlated with Call_Count (Weekly):
+Call_Count               1.000000
+rolling_mean_4w          0.727256
+pct_priority_4          -0.627086
+is_high_priority_week   -0.588084
+pct_priority_2          -0.585574
+pct_category_4          -0.581119
+pct_priority_3          -0.530006
+lag_previous_week        0.505479
+pct_category_3          -0.428874
+pct_category_1          -0.411729
+pct_category_2          -0.398358
+Name: Call_Count, dtype: float64
+
+Top 10 Features Correlated with Call_Count (Monthly):
+Call_Count            1.000000
+rolling_mean_3m       0.993146
+lag_previous_month    0.874846
+pct_priority_1        0.826375
+pct_priority_4       -0.744299
+pct_category_5        0.731666
+pct_category_1        0.689546
+pct_category_2        0.689024
+pct_mental_health     0.644053
+pct_priority_3        0.544166
+pct_priority_2       -0.417525
+Name: Call_Count, dtype: float64
+Top 10 Most Important Features (XGBoost):
+                     Feature  Importance
+35          rolling_mean_30d    0.551835
+33           rolling_mean_7d    0.322754
+20               is_peak_day    0.018897
+18   lag_previous_week_total    0.018473
+15    lag_same_day_last_week    0.012850
+19                is_weekend    0.011312
+14          lag_previous_day    0.007954
+34            rolling_std_7d    0.005938
+29                year_trend    0.004294
+25  pct_priority_1_peak_hour    0.003119
+Top 10 Most Important Features (Linear Regression - by absolute coefficient):
+                    Feature  Coefficient
+33          rolling_mean_7d    71.041860
+28         days_since_start    57.375364
+18  lag_previous_week_total   -47.043068
+1                      Year   -28.056087
+29               year_trend   -28.056087
+15   lag_same_day_last_week    13.297994
+35         rolling_mean_30d    -8.012705
+2               Day_of_Year    -5.328853
+32        day_of_year_trend    -5.328853
+31               week_trend    -3.707977
+
+=== Final Summary ===
+Average R² across all models: 0.7036
+Total models trained: 12
+=== Training Completed: 2025-12-03 21:56:25.820076 ===
+

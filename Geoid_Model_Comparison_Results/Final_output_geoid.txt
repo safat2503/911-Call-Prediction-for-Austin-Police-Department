@@ -1,0 +1,114 @@
+=== Training Started: 2025-12-03 22:08:10.291533 ===
+
+Dataset shapes - Daily: (357837, 51), Weekly: (100083, 35), Monthly: (22042, 35)
+Feature counts - Enhanced: Daily=37, Weekly=23, Monthly=23
+Encoding complete
+Train-test splits complete
+Daily - Train 286269, Test 71568
+Weekly - Train 80066, Test 20017
+Monthly - Train 17633, Test 4409
+Feature scaling complete
+Lasso models trained
+Linear Regression models trained
+Training Random Forest models...
+RF Enhanced Daily - Best params: {'n_estimators': np.int64(297), 'min_samples_leaf': 1, 'max_features': 0.7, 'max_depth': np.int64(23)}
+RF Enhanced Daily - Best RMSE: 0.37
+RF Enhanced Weekly - Best params: {'n_estimators': np.int64(432), 'min_samples_leaf': 1, 'max_features': 0.6, 'max_depth': np.int64(18)}
+RF Enhanced Weekly - Best RMSE: 2.70
+RF Enhanced Monthly - Best params: {'n_estimators': np.int64(344), 'min_samples_leaf': 2, 'max_features': 1.0, 'max_depth': np.int64(14)}
+RF Enhanced Monthly - Best RMSE: 9.10
+Random Forest training complete
+Training XGBoost models...
+XGB Enhanced Daily - Best params: {'subsample': np.float64(0.8666666666666667), 'reg_lambda': np.float64(27.5), 'n_estimators': np.int64(834), 'min_child_weight': np.int64(9), 'max_depth': np.int64(7), 'learning_rate': np.float64(0.05586206896551724), 'gamma': np.float64(0.7142857142857143), 'colsample_bytree': np.float64(0.7444444444444445)}
+XGB Enhanced Daily - Best RMSE: 0.36
+XGB Enhanced Weekly - Best params: {'subsample': np.float64(0.7777777777777778), 'reg_lambda': np.float64(8.88888888888889), 'n_estimators': np.int64(946), 'min_child_weight': np.int64(7), 'max_depth': np.int64(6), 'learning_rate': np.float64(0.05586206896551725), 'gamma': np.float64(5.090909090909091), 'colsample_bytree': np.float64(0.5666666666666667)}
+XGB Enhanced Weekly - Best RMSE: 2.83
+XGB Enhanced Monthly - Best params: {'subsample': np.float64(0.8666666666666667), 'reg_lambda': np.float64(4.222222222222222), 'n_estimators': np.int64(310), 'min_child_weight': np.int64(4), 'max_depth': np.int64(4), 'learning_rate': np.float64(0.07965517241379311), 'gamma': np.float64(0.5555555555555556), 'colsample_bytree': np.float64(0.7111111111111111)}
+XGB Enhanced Monthly - Best RMSE: 9.73
+All models trained. Total: 12
+
+=== Model Evaluation Results ===
+                  Model       R2      MAE      RMSE Aggregation Algorithm
+   lasso_enhanced_daily 0.887795 0.345570  0.764722       Daily     LASSO
+  lasso_enhanced_weekly 0.857991 2.499073  4.272406      Weekly     LASSO
+ lasso_enhanced_monthly 0.983177 4.321365  6.664504     Monthly     LASSO
+  linear_enhanced_daily 0.887754 0.345139  0.764862       Daily    LINEAR
+ linear_enhanced_weekly 0.858011 2.498836  4.272114      Weekly    LINEAR
+linear_enhanced_monthly 0.983159 4.320673  6.667950     Monthly    LINEAR
+      rf_enhanced_daily 0.941754 0.151328  0.550974       Daily        RF
+     rf_enhanced_weekly 0.907457 1.313294  3.448942      Weekly        RF
+    rf_enhanced_monthly 0.972331 4.064110  8.546990     Monthly        RF
+     xgb_enhanced_daily 0.921851 0.155299  0.638203       Daily       XGB
+    xgb_enhanced_weekly 0.857840 1.330463  4.274679      Weekly       XGB
+   xgb_enhanced_monthly 0.905600 4.792735 15.787008     Monthly       XGB
+Top 10 Features Correlated with Call_Count (Daily):
+Call_Count                 1.000000
+rolling_mean_7d            0.789212
+rolling_mean_30d           0.755400
+lag_previous_week_total    0.706602
+rolling_std_7d             0.638830
+lag_previous_day           0.574029
+lag_same_day_last_week     0.559963
+lag_2days_ago              0.559372
+lag_same_day_last_month    0.541659
+hour_category             -0.210887
+is_high_priority_day      -0.140937
+Name: Call_Count, dtype: float64
+
+Top 10 Features Correlated with Call_Count (Weekly):
+Call_Count               1.000000
+rolling_mean_4w          0.885663
+lag_previous_week        0.756744
+is_high_priority_week   -0.189146
+is_peak_hour_period     -0.164841
+pct_priority_3          -0.129923
+pct_category_5          -0.117414
+pct_priority_2          -0.110597
+pct_category_2          -0.109324
+pct_priority_4          -0.098727
+pct_category_4          -0.094715
+Name: Call_Count, dtype: float64
+
+Top 10 Features Correlated with Call_Count (Monthly):
+Call_Count                  1.000000
+rolling_mean_3m             0.988957
+lag_previous_month          0.945250
+lag_same_month_last_year    0.684946
+pct_category_3              0.330219
+is_peak_hour_period        -0.200226
+pct_category_5             -0.132063
+is_high_priority_month     -0.128008
+pct_category_2             -0.069372
+GeoID_Encoded              -0.068379
+pct_category_1              0.053440
+Name: Call_Count, dtype: float64
+Top 10 Most Important Features (XGBoost):
+                    Feature  Importance
+35         rolling_mean_30d    0.297768
+33          rolling_mean_7d    0.161077
+6            pct_priority_3    0.063017
+7            pct_priority_4    0.061945
+5            pct_priority_2    0.060460
+9            pct_category_1    0.046582
+11           pct_category_3    0.044010
+18  lag_previous_week_total    0.041648
+4            pct_priority_1    0.029576
+12           pct_category_4    0.028860
+Top 10 Most Important Features (Linear Regression - by absolute coefficient):
+                    Feature  Coefficient
+28         days_since_start   -14.936710
+29               year_trend     7.342434
+1                      Year     7.342434
+33          rolling_mean_7d     7.141816
+18  lag_previous_week_total    -6.668800
+32        day_of_year_trend     2.999927
+2               Day_of_Year     2.999927
+15   lag_same_day_last_week     1.356349
+3                      Week    -0.316685
+31               week_trend    -0.316685
+
+=== Final Summary ===
+Average R² across all models: 0.9137
+Total models trained: 12
+=== Training Completed: 2025-12-03 23:34:39.052892 ===
+
